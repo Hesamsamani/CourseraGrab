@@ -13,6 +13,13 @@ Videos, subtitles, quizzes, notebooks and resources, organised just like on the 
 ![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows&logoColor=white)
 [![Star](https://img.shields.io/github/stars/Hesamsamani/CourseraGrab?style=social)](https://github.com/Hesamsamani/CourseraGrab)
 
+
+---
+
+<div align="center">
+<img src="icon/icon.png" width="120" alt="CourseraGrab icon">
+  
+</div>
 </div>
 
 ---

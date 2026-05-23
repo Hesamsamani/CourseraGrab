@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# PyInstaller build output
+build/
+dist/
+win64_build/
+
+# Local config (can contain your Coursera login cookie, do NOT commit)
+data.bin
+*.bin
+
+# Downloaded course content (do NOT commit)
+download test/
+downloads/
+*-syllabus-parsed.json
+*.json
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Misc local files
+notes.txt
+TODO.txt
+draft.py
+draft2.py
+features.txt
+.env
+manual_test.txt
+notification_img.*

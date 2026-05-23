@@ -21,6 +21,7 @@ Videos, subtitles, quizzes, notebooks and resources, organised just like on the 
 
 </div>
 
+</div>
 ---
 
 ## ✨ Features

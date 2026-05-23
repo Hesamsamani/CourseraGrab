@@ -13,7 +13,6 @@ Videos, subtitles, quizzes, notebooks and resources, organised just like on the 
 ![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows&logoColor=white)
 [![Star](https://img.shields.io/github/stars/Hesamsamani/CourseraGrab?style=social)](https://github.com/Hesamsamani/CourseraGrab)
 
----
 </div>
 <div align="center">
 <img src="App_Interface.png"  alt="CourseraGrab App Interface">
@@ -22,7 +21,6 @@ Videos, subtitles, quizzes, notebooks and resources, organised just like on the 
 </div>
 
 </div>
----
 
 ## ✨ Features
 
@@ -41,7 +39,7 @@ There are two ways to use CourseraGrab: downloading the standalone app (recommen
 You do not need Python installed for this method. 
 
 [![Download Latest Release](https://img.shields.io/github/v/release/Hesamsamani/CourseraGrab?style=for-the-badge&label=Download%20.exe&color=success)](https://github.com/Hesamsamani/CourseraGrab/releases/latest)
-s
+
 1. Click the button above to go to the Releases page.
 2. Download the `CourseraGrab.exe` file from the **Assets** section.
 3. Double-click the `.exe` file to run the app. 

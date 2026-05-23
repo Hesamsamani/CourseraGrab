@@ -17,7 +17,7 @@ Videos, subtitles, quizzes, notebooks and resources, organised just like on the 
 ---
 
 <div align="center">
-<img src="icon/icon.png" width="120" alt="CourseraGrab icon">
+<img src="App_Interface.png" width="1200" alt="CourseraGrab App Interface">
   
 </div>
 </div>

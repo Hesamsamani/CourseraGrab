@@ -14,11 +14,11 @@ Videos, subtitles, quizzes, notebooks and resources, organised just like on the 
 [![Star](https://img.shields.io/github/stars/Hesamsamani/CourseraGrab?style=social)](https://github.com/Hesamsamani/CourseraGrab)
 
 ---
-
+</div>
 <div align="center">
 <img src="App_Interface.png"  alt="CourseraGrab App Interface">
   
-</div>
+
 </div>
 
 ---

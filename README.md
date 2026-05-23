@@ -53,3 +53,12 @@ If you prefer to run the raw Python code, make sure you have Python 3.12+ instal
 ```bash
 pip install -r requirements.txt
 python maingui.py
+```
+
+---
+## Credits
+
+
+Built by **Hesam Samani** &middot; [LinkedIn](https://www.linkedin.com/in/hesam-samani/) &middot; [GitHub](https://github.com/Hesamsamani)
+
+<sub>For personal, offline study of courses you are enrolled in. Please respect Coursera's Terms of Service.</sub>

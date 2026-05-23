@@ -41,7 +41,7 @@ There are two ways to use CourseraGrab: downloading the standalone app (recommen
 You do not need Python installed for this method. 
 
 [![Download Latest Release](https://img.shields.io/github/v/release/Hesamsamani/CourseraGrab?style=for-the-badge&label=Download%20.exe&color=success)](https://github.com/Hesamsamani/CourseraGrab/releases/latest)
-
+s
 1. Click the button above to go to the Releases page.
 2. Download the `CourseraGrab.exe` file from the **Assets** section.
 3. Double-click the `.exe` file to run the app. 

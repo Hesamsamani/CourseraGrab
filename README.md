@@ -8,17 +8,15 @@
 
 Videos, subtitles, quizzes, notebooks and resources, organised just like on the site.
 
+A privacy-first Windows desktop app — no telemetry, no cloud uploads.
+
 ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)
 ![PyQt5](https://img.shields.io/badge/GUI-PyQt5-41cd52?logo=qt&logoColor=white)
 ![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows&logoColor=white)
+[![Release](https://img.shields.io/github/v/release/Hesamsamani/CourseraGrab?label=release)](https://github.com/Hesamsamani/CourseraGrab/releases/latest)
 [![Star](https://img.shields.io/github/stars/Hesamsamani/CourseraGrab?style=social)](https://github.com/Hesamsamani/CourseraGrab)
 
-</div>
-<div align="center">
-<img src="App_Interface.png"  alt="CourseraGrab App Interface">
-  
-
-</div>
+<img src="App_Interface.png" width="720" alt="CourseraGrab App Interface">
 
 </div>
 
@@ -31,18 +29,32 @@ Videos, subtitles, quizzes, notebooks and resources, organised just like on the 
 - **Smart Resuming:** Pause and resume downloads without losing progress, with quick access to your downloaded folders.
 - **Quality Control:** Pick your preferred video resolution and select specific subtitle languages before downloading.
 
+## 🛠️ Tech Highlights
+
+| Area | Implementation |
+|------|------------------|
+| **UI** | PyQt5 desktop app with dark/light themes, list/grid course browser |
+| **Auth** | Browser cookie extraction via `rookiepy` (no password storage) |
+| **Downloads** | Multithreaded pool + isolated worker subprocess for clean stop/resume |
+| **Persistence** | Local SQLite history, settings, and download state |
+| **Packaging** | PyInstaller single-file `.exe` for Windows distribution |
+
+**Stack:** Python 3.12 · PyQt5 · requests · BeautifulSoup · rookiepy · PyInstaller
+
+The download engine is adapted from the open-source [coursera-dl](https://github.com/coursera-dl/coursera-dl) project.
+
 ## 🚀 Getting Started
 
 There are two ways to use CourseraGrab: downloading the standalone app (recommended) or running it via the Python terminal.
 
 ### Method 1: Download the Windows App (.exe)
-You do not need Python installed for this method. 
+You do not need Python installed for this method.
 
 [![Download Latest Release](https://img.shields.io/github/v/release/Hesamsamani/CourseraGrab?style=for-the-badge&label=Download%20.exe&color=success)](https://github.com/Hesamsamani/CourseraGrab/releases/latest)
 
 1. Click the button above to go to the Releases page.
 2. Download the `CourseraGrab.exe` file from the **Assets** section.
-3. Double-click the `.exe` file to run the app. 
+3. Double-click the `.exe` file to run the app.
 
 ### Method 2: Run via Terminal (Python)
 If you prefer to run the raw Python code, make sure you have Python 3.12+ installed.
@@ -55,9 +67,9 @@ python maingui.py
 ```
 
 ---
+
 ## Credits
 
-
-Built by **Hesam Samani** &middot; [LinkedIn](https://www.linkedin.com/in/hesam-samani/) &middot; [GitHub](https://github.com/Hesamsamani)
+Built by **Hesam Samani** · [LinkedIn](https://www.linkedin.com/in/hesam-samani/) · [GitHub](https://github.com/Hesamsamani) · [Portfolio](https://hesamsamani.codes)
 
 <sub>For personal, offline study of courses you are enrolled in. Please respect Coursera's Terms of Service.</sub>

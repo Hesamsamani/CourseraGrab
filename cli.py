@@ -383,13 +383,6 @@ def parse_args(args=None):
         'Advanced miscellaneous options')
 
     group_adv_misc.add_argument(
-        '--hook',
-        dest='hooks',
-        action='append',
-        default=[],
-        help='hooks to run when finished')
-
-    group_adv_misc.add_argument(
         '-pl',
         '--playlist',
         dest='playlist',

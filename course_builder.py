@@ -4,8 +4,6 @@ import abc
 import time
 import codecs
 import logging
-import subprocess
-
 import requests
 
 import glob
@@ -169,9 +167,6 @@ class CourseraDownloader(CourseDownloader):
                 if self._args.playlist:
                     create_m3u_playlist(section.dir)
 
-                if self._args.hooks:
-                    self._run_hooks(section, self._args.hooks)
-
             # if we haven't updated any files in 1 month, we're probably
             # done with this course
             completed = completed and is_course_complete(last_update)
@@ -246,15 +241,6 @@ class CourseraDownloader(CourseDownloader):
             last_update = max(last_update,
                               os.path.getmtime(lecture_filename))
         return last_update
-
-    def _run_hooks(self, section, hooks):
-        original_dir = os.getcwd()
-        for hook in hooks:
-            logging.info('Running hook %s for section %s.',
-                         hook, section.dir)
-            os.chdir(section.dir)
-            subprocess.call(hook)
-        os.chdir(original_dir)
 
 
 # ---------------------------------------------------------------------------

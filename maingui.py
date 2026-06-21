@@ -21,7 +21,7 @@ from PyQt5.QtWidgets import (
     QProgressBar, QDialog, QSizePolicy, QToolButton, QStyle, QCheckBox
 )
 from PyQt5.QtGui import QIcon, QPixmap, QCursor
-from PyQt5.QtCore import Qt, QSize, QProcess, QUrl, QEvent, pyqtSignal
+from PyQt5.QtCore import Qt, QSize, QProcess, QProcessEnvironment, QUrl, QEvent, pyqtSignal
 from PyQt5.QtGui import QDesktopServices
 
 from threading import Thread
@@ -641,8 +641,7 @@ class MainWindow(QMainWindow):
         sl_name = self.sl_combo.currentText()
         langcode = self.sllangschoices.get(sl_name, 'en')
 
-        # persist user choices
-        self.localdb.update('argdict.ca', cauth)
+        # persist user choices (CAUTH is re-fetched from the browser each session)
         self.localdb.update('argdict.classname', courseurl)
         self.localdb.update('argdict.path', path)
         self.localdb.update('argdict.video_resolution', res)
@@ -661,8 +660,6 @@ class MainWindow(QMainWindow):
     def _build_command(self, argdict, ignore_srt, resume):
         """Translate the argument dict into a coursera-dl style command list."""
         cmd = []
-        # auth first
-        cmd += ['-ca', argdict['ca']]
         cmd += ['-sl', argdict['sl']]
         cmd += ['--video-resolution', argdict['video_resolution']]
         cmd += ['--path', argdict['path']]
@@ -703,14 +700,14 @@ class MainWindow(QMainWindow):
             'slug': argdict['classname'],
             'path': argdict['path'],
         }
-        self._start_process(cmd, resume=self.shouldResume)
+        self._start_process(cmd, resume=self.shouldResume, cauth=argdict['ca'])
 
     def resumeBtnHandler(self):
         self.shouldResume = True
         self.downloadBtnHandler()
         self.shouldResume = False
 
-    def _start_process(self, cmd, resume=False):
+    def _start_process(self, cmd, resume=False, cauth=None):
         # In a frozen .exe we relaunch this same executable in worker mode;
         # during development we run the download_worker.py script with Python.
         if IS_FROZEN:
@@ -726,6 +723,11 @@ class MainWindow(QMainWindow):
         self.process.readyReadStandardOutput.connect(self._on_process_output)
         self.process.finished.connect(self._on_process_finished)
         self.process.errorOccurred.connect(self._on_process_error)
+
+        if cauth:
+            env = QProcessEnvironment.systemEnvironment()
+            env.insert('COURSERA_CAUTH', cauth)
+            self.process.setProcessEnvironment(env)
 
         self._set_running_state(True)
         self._set_console_collapsed(False)   # always show the log while running

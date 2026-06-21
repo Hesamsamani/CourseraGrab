@@ -234,7 +234,7 @@ class MainWindow(QMainWindow):
         return btn
 
     def _build_controls_panel(self):
-        group = QGroupBox("⚙  Download settings")
+        group = QGroupBox("Download settings")
         layout = QVBoxLayout()
         layout.setSpacing(10)
         group.setLayout(layout)
@@ -268,7 +268,8 @@ class MainWindow(QMainWindow):
         # Folder
         grid.addWidget(QLabel("Download folder:"), 2, 0)
         folder_row = QHBoxLayout()
-        self.path_btn = QPushButton("📂  Browse")
+        self.path_btn = QPushButton("Browse")
+        self.path_btn.setIcon(self.style().standardIcon(QStyle.SP_DirIcon))
         self.path_btn.clicked.connect(self.getPath)
         folder_row.addWidget(self.path_btn)
         self.open_folder_btn = QPushButton("Open")
@@ -346,7 +347,8 @@ class MainWindow(QMainWindow):
 
         # Action buttons
         btn_row = QHBoxLayout()
-        self.download_btn = QPushButton("⬇  Download")
+        self.download_btn = QPushButton("Download")
+        self.download_btn.setIcon(self.style().standardIcon(QStyle.SP_ArrowDown))
         self.download_btn.setObjectName("primary")
         self.download_btn.clicked.connect(self.downloadBtnHandler)
         self.resume_btn = QPushButton("⏵  Resume")
@@ -370,7 +372,8 @@ class MainWindow(QMainWindow):
         group.setLayout(layout)
 
         top = QHBoxLayout()
-        self.load_courses_btn = QPushButton("⟳  Load my courses")
+        self.load_courses_btn = QPushButton("Load my courses")
+        self.load_courses_btn.setIcon(self.style().standardIcon(QStyle.SP_BrowserReload))
         self.load_courses_btn.setObjectName("ghost")
         self.load_courses_btn.clicked.connect(self.load_courses)
         top.addWidget(self.load_courses_btn)

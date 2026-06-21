@@ -18,6 +18,12 @@ A privacy-first Windows desktop app — no telemetry, no cloud uploads.
   <img src="https://img.shields.io/badge/license-MIT-22c55e?style=for-the-badge" alt="MIT">
 </p>
 
+<p>
+  <img src="https://img.shields.io/badge/video-FFmpeg-007808?style=for-the-badge&logo=ffmpeg&logoColor=white" alt="FFmpeg">
+  <img src="https://img.shields.io/badge/auth-Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white" alt="Selenium">
+  <img src="https://img.shields.io/badge/courses-Coursera-0056D2?style=for-the-badge&logo=coursera&logoColor=white" alt="Coursera">
+</p>
+
 <img src="App_Interface.png" width="720" alt="CourseraGrab App Interface">
 
 </div>

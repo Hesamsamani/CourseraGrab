@@ -4,21 +4,63 @@
 
 # CourseraGrab
 
-**Download your enrolled Coursera courses, week by week.**
+**Windows GUI to download enrolled Coursera courses — videos, subtitles, and resources offline.**
 
-Videos, subtitles, quizzes, notebooks and resources, organised just like on the site.
+Videos, subtitles, quizzes, notebooks and resources, organised week by week just like on the site.
 
 A privacy-first Windows desktop app — no telemetry, no cloud uploads.
 
-![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)
-![PyQt5](https://img.shields.io/badge/GUI-PyQt5-41cd52?logo=qt&logoColor=white)
-![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows&logoColor=white)
-[![Release](https://img.shields.io/github/v/release/Hesamsamani/CourseraGrab?label=release)](https://github.com/Hesamsamani/CourseraGrab/releases/latest)
-[![Star](https://img.shields.io/github/stars/Hesamsamani/CourseraGrab?style=social)](https://github.com/Hesamsamani/CourseraGrab)
+<p>
+  <a href="https://github.com/Hesamsamani/CourseraGrab/releases/latest"><img src="https://img.shields.io/github/v/release/Hesamsamani/CourseraGrab?style=for-the-badge&label=%E2%AC%87%EF%B8%8F%20Download" alt="Latest release"></a>
+  <img src="https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/PyQt5-41CD52?style=for-the-badge&logo=qt&logoColor=white" alt="PyQt5">
+  <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows">
+  <img src="https://img.shields.io/badge/license-MIT-22c55e?style=for-the-badge" alt="MIT">
+</p>
 
 <img src="App_Interface.png" width="720" alt="CourseraGrab App Interface">
 
 </div>
+
+## ⚙️ How it works
+
+```mermaid
+flowchart LR
+  subgraph auth["Browser session"]
+    CK["rookiepy cookie import"]
+  end
+
+  subgraph api["Coursera API"]
+    EC["Enrolled courses"]
+    SY["Syllabus parse"]
+  end
+
+  subgraph worker["Download worker"]
+    QP["QProcess subprocess"]
+    EN["engine.py"]
+    PO["Download pool"]
+  end
+
+  subgraph files["Local files"]
+    VD["Videos"]
+    ST["Subtitles"]
+    RS["Quizzes · notebooks · resources"]
+  end
+
+  CK --> EC
+  EC --> SY
+  SY --> QP
+  QP --> EN
+  EN --> PO
+  PO --> VD & ST & RS
+```
+
+1. **Import session** — CourseraGrab reads your browser login cookies via `rookiepy` (no password storage).
+2. **List courses** — the GUI fetches enrolled courses and builds a week-by-week syllabus tree.
+3. **Download in worker** — a `QProcess` subprocess runs `engine.py` so you can stop/resume without freezing the UI.
+4. **Save locally** — videos, subtitles, quizzes, notebooks, and reading resources land in your chosen folder.
+
+---
 
 ## ✨ Features
 
@@ -42,6 +84,54 @@ A privacy-first Windows desktop app — no telemetry, no cloud uploads.
 **Stack:** Python 3.12 · PyQt5 · requests · BeautifulSoup · rookiepy · PyInstaller
 
 The download engine is adapted from the open-source [coursera-dl](https://github.com/coursera-dl/coursera-dl) project.
+
+---
+
+## 🏗 Architecture
+
+```mermaid
+flowchart LR
+  subgraph gui["PyQt5 · maingui.py"]
+    MW["MainWindow"]
+    UI["Course browser + progress"]
+  end
+
+  subgraph proc["Worker process"]
+    QP["QProcess (--coursera-worker)"]
+    EN["engine.py"]
+    CB["course_builder.py"]
+    FD["file_downloader.py"]
+  end
+
+  subgraph net["Networking"]
+    AU["auth.py"]
+    OD["ondemand_api.py"]
+    CA["courses_api.py"]
+  end
+
+  subgraph data["Local persistence"]
+    DB[(SQLite · localdb.py)]
+  end
+
+  MW --> AU
+  AU --> CA
+  CA --> OD
+  MW --> QP
+  QP --> EN
+  EN --> CB & FD
+  MW --> DB
+  EN --> DB
+```
+
+| Layer | Tech |
+|-------|------|
+| GUI | PyQt5 — course browser, themes, live progress bar |
+| Worker | Isolated `QProcess` subprocess for clean stop/resume |
+| Engine | `engine.py` + coursera-dl–adapted download pipeline |
+| Auth | Browser cookies via `rookiepy` — no credential storage |
+| Persistence | SQLite history, settings, and download state |
+
+---
 
 ## 🚀 Getting Started
 

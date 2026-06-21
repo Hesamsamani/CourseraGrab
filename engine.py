@@ -87,8 +87,9 @@ def get_session():
 
 def create_session(args):
     session = get_session()
-    if args.cookies_cauth:
-        session.cookies.set('CAUTH', args.cookies_cauth)
+    cauth = os.environ.get('COURSERA_CAUTH') or args.cookies_cauth
+    if cauth:
+        session.cookies.set('CAUTH', cauth)
     elif args.browser:
         def autocookie(browser):
             import browser_cookie3

@@ -1,0 +1,359 @@
+# Instincts generated from https://github.com/Hesamsamani/CourseraGrab
+# Generated: 2026-06-21T04:39:40.132Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: CourseraGrab-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Hesamsamani/CourseraGrab
+---
+
+# CourseraGrab Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: fix
+
+## Evidence
+
+- 1 commits analyzed
+- Detected conventional commit pattern
+- Examples: fix(audit): cycle 001 P0/P1 security fixes
+
+---
+id: CourseraGrab-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Hesamsamani/CourseraGrab
+---
+
+# CourseraGrab Commit Length
+
+## Action
+
+Keep commit messages concise (~42 characters)
+
+## Evidence
+
+- Average commit message length: 42 chars
+- Based on 1 commits
+
+---
+id: CourseraGrab-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Hesamsamani/CourseraGrab
+---
+
+# CourseraGrab Naming Files
+
+## Action
+
+Use snake_case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: snake_case
+
+---
+id: CourseraGrab-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Hesamsamani/CourseraGrab
+---
+
+# CourseraGrab Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: CourseraGrab-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Hesamsamani/CourseraGrab
+---
+
+# CourseraGrab Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: CourseraGrab-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/Hesamsamani/CourseraGrab
+---
+
+# CourseraGrab Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: CourseraGrab-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/Hesamsamani/CourseraGrab
+---
+
+# CourseraGrab Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: courseragrab-instinct-file-naming
+trigger: "When creating a new Python file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Hesamsamani/CourseraGrab
+---
+
+# Courseragrab Instinct File Naming
+
+## Action
+
+Name the file using snake_case
+
+## Evidence
+
+- Pattern: namingConventions.files = snake_case
+
+---
+id: courseragrab-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Hesamsamani/CourseraGrab
+---
+
+# Courseragrab Instinct Function Naming
+
+## Action
+
+Name the function using camelCase
+
+## Evidence
+
+- Pattern: namingConventions.functions = camelCase
+
+---
+id: courseragrab-instinct-class-naming
+trigger: "When defining a new class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Hesamsamani/CourseraGrab
+---
+
+# Courseragrab Instinct Class Naming
+
+## Action
+
+Name the class using PascalCase
+
+## Evidence
+
+- Pattern: namingConventions.classes = PascalCase
+
+---
+id: courseragrab-instinct-constant-naming
+trigger: "When defining a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Hesamsamani/CourseraGrab
+---
+
+# Courseragrab Instinct Constant Naming
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE
+
+## Evidence
+
+- Pattern: namingConventions.constants = SCREAMING_SNAKE_CASE
+
+---
+id: courseragrab-instinct-import-style
+trigger: "When importing modules in Python code"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Hesamsamani/CourseraGrab
+---
+
+# Courseragrab Instinct Import Style
+
+## Action
+
+Use relative imports
+
+## Evidence
+
+- Pattern: importStyle = relative
+
+---
+id: courseragrab-instinct-export-style
+trigger: "When exporting functions or classes"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: Hesamsamani/CourseraGrab
+---
+
+# Courseragrab Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern: exportStyle = named
+
+---
+id: courseragrab-instinct-test-location
+trigger: "When adding or looking for tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: Hesamsamani/CourseraGrab
+---
+
+# Courseragrab Instinct Test Location
+
+## Action
+
+Place test files in the separate 'tests' folder
+
+## Evidence
+
+- Pattern: folderStructure.commonFolders includes 'tests'
+- Pattern: testLocation = separate
+
+---
+id: courseragrab-instinct-test-pattern
+trigger: "When naming a test file"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: Hesamsamani/CourseraGrab
+---
+
+# Courseragrab Instinct Test Pattern
+
+## Action
+
+Use the *.test.ts pattern for test file names
+
+## Evidence
+
+- Pattern: filePattern = *.test.ts
+
+---
+id: courseragrab-instinct-test-type
+trigger: "When writing tests"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: Hesamsamani/CourseraGrab
+---
+
+# Courseragrab Instinct Test Type
+
+## Action
+
+Write unit tests
+
+## Evidence
+
+- Pattern: testTypes includes 'unit'
+
+---
+id: courseragrab-instinct-commit-prefix
+trigger: "When writing a git commit message for a fix"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: Hesamsamani/CourseraGrab
+---
+
+# Courseragrab Instinct Commit Prefix
+
+## Action
+
+Start the commit message with 'fix' as a prefix
+
+## Evidence
+
+- Pattern: commits.prefixes includes 'fix'
+- Example: fix(audit): cycle 001 P0/P1 security fixes
+
+---
+id: courseragrab-instinct-commit-format
+trigger: "When writing a git commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: Hesamsamani/CourseraGrab
+---
+
+# Courseragrab Instinct Commit Format
+
+## Action
+
+Use the conventional commit format: <type>(<scope>): <description>
+
+## Evidence
+
+- Pattern: commits.type = conventional
+- Example: fix(audit): cycle 001 P0/P1 security fixes
+
